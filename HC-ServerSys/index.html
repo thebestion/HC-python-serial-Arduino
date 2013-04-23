@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<!-- 
+/*
+ * PiHome v1.0
+ * http://pihome.harkemedia.de/
+ *
+ * PiHome Copyright (c) 2012, Sebastian Harke
+ * Lizenz Informationen.
+ * 
+ * This work is licensed under the Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Unported License. To view a copy of this license,
+ * visit: http://creativecommons.org/licenses/by-nc-sa/3.0/.
+ *
+*/
+-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+	<meta name="viewport" content="width=device-width, user-scalable=no" /> 
+	<meta name="format-detection" content="telephone=yes">
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/request.js" type="text/javascript" charset="utf-8"></script>
+	<title>HomeCtrl GUI</title>
+	<script type="text/javascript">
+  	$(document).ready(function() {
+    	  request('request.php', 'GET', {s:'A/status/light'}, receiveIt);
+    	  request('request.php', 'GET', {s:'B/status/light'}, receiveIt);
+    	  request('request.php', 'GET', {s:'C/status/light'}, receiveIt);
+    	  request('request.php', 'GET', {s:'D/status/light'}, receiveIt);
+  	});
+	</script>
+</head>
+<body>
+<div id="page">
+	<div id="logo"><img src="images/logo.png" border="0" alt="HomeCtrl"></div>
+	<div id="liste">
+		<ul>
+			<li><span>Lampe A</span><span><a onclick="ac('A');"><img src="images/off.png" width="94px" height="27px" class="btn" border="0" id="A" /></a></span></li>
+			<li><span>Lampe B</span><span><a onclick="ac('B');"><img src="images/off.png" width="94px" height="27px" class="btn" border="0" id="B" /></a></span></li>
+			<li><span>Lampe C</span><span><a onclick="ac('C');"><img src="images/off.png" width="94px" height="27px" class="btn" border="0" id="C" /></a></span></li>
+			<li><span>Lampe D</span><span><a onclick="ac('D');"><img src="images/off.png" width="94px" height="27px" class="btn" border="0" id="D" /></a></span></li>
+		</ul>
+	</div>	
+	<div id="copy">&copy 2012 by HomeCrtl - <a href="admin/index.html">Admin</a></div>
+</div>
+</body>
+</html>
